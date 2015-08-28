@@ -1,0 +1,3 @@
+include ':app', ':BaiduLBS_Android'
+
+include ':zXingDemo'

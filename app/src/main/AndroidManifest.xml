@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="appframe.appframe" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!-- GPS定位权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <application
+
+        android:allowBackup="true"
+        android:name=".app.App"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
+        <!-- meta-data需要写在application中 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="UM9iRbTNDiD4miGO8mW0L0P4" />
+
+        <activity android:name=".activity.SplashActivity" android:launchMode="singleTop" android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.HomeActivity" android:launchMode="singleTop" android:screenOrientation="portrait" />
+        <activity android:name=".activity.LoginActivity" android:label="登入" android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.RegisterActivity" android:label="注册" android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.OrderSendActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.OrderDetailsActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.MyInfoActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PrivacyActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.AboutActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.AccountActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.NewMessageActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SettingActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.WhoCanSeeActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.FriendsInfoActivity"  android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".activity.FramedWebViewActivity"
+            android:screenOrientation="portrait"
+            />
+    </application>
+
+</manifest>
